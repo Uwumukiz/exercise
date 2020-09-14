@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button id="cccc" onclick="fetchData()">Fetch</button>
+      <table id="fetch">
+          <th>id</th>
+          <th>name</th>
+          <th>contacts</th>
+
+      </table>
+      
+
+    <script>
+         function fetchData(){
+            fetch('http://localhost:3000/user/:uid/photos/:file')
+            .then(response=>response.json())
+            .then(data=>displayData(data))
+
+        }
+
+        function displayData(data){
+            let container = document.getElementById('fetch');
+    console.log(data)
+               for(let i=0; i<data.length; i++){
+                    
+                let childNode = document.createElement('tr');
+           childNode.innerHTML =`<td>${data[i].id}</td><td>${data[i].name}</td>`;
+            container.appendChild(childNode);
+        
+        }
+    }
+
+    </script>
+    
+</body>
+</html>

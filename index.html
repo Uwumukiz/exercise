@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>fetch</title>
+</head>
+<body>
+    <button onclick="fetchData()">Fetch</button>
+
+    <div id="items">
+        <form action="send">
+            <input type="text" id="name">
+            <button onclick="sendCourse()">Submit</button>
+        </form>
+    </div>
+    
+    <table id="tabuada" border="solid black 2px">
+        <tr>
+            <th>id</th>
+            <th>name</th>
+            
+            
+        </tr>
+    </table>
+
+    <script>
+
+        function sendCourse(){
+            console.log('Is this a bommm');
+            let name=document.getElementById('name').value;
+            console.log(name);
+            fetch("http://localhost:3000/api/courses", {method:"POST", data:{name}})
+            .then((response)=>response.json())
+            .then((data)=>console.log(data));
+        }
+
+        function fetchData(){
+            fetch('http://localhost:3000/api/courses')
+            .then(response=>response.json())
+            .then(data=>displayData(data))
+
+        }
+
+        function displayData(data){
+            let container = document.getElementById('tabuada');
+    console.log(data)
+                for(let i=0; i<data.length; i++){
+                    
+                    
+
+                let childNode = document.createElement('tr');
+            childNode.innerHTML =`<td>${data[i].id}</td><td>${data[i].name}</td>`;
+            container.appendChild(childNode);
+        
+        }
+
+
+
+        }
+    </script>
+</body>
+</html>
