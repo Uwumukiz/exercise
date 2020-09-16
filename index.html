@@ -4,8 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>How to fetch</title>
+    <style>
+        a:link{
+            color: aqua;
+            text-decoration: none;
+            border: solid aqua;
+            background-color: whitesmoke;
+            width: fit-content;
+            height: fit-content;
+        }
+        a:visited{
+            color: brown;
+            border: solid aqua;
+            background-color: blue;
+            width: fit-content;
+            height: fit-content;
+            
+        }
+        a:hover{
+            color:solid black;
+            border: solid aqua;
+            background-color:cyan;
+            width: fit-content;
+            height: fit-content;
+        }
+    </style>
 </head>
 <body>
+<header>
+    <div>
+        <a href="Rossss.jpg" title="email" target="_blank">sendEmail</a>
+    </div>
+</header>
     <h1>Welcome to my server</h1>
     <button onclick="fetchData()">Fetch</button>
 
@@ -24,6 +54,9 @@
             
         </tr>
     </table>
+
+    <p>this is a paragraph with&#33;space
+    </p>
 
     <script>
 
