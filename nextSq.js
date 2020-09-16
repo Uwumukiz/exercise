@@ -1,7 +1,7 @@
-// let x = 5;
-// let sq = x*x;
-// let nextsq = (x+1) * (x+1);
-// console.log(nextsq);
+let x = 5;
+let sq = x*x;
+let nextsq = (x+1) * (x+1);
+console.log(nextsq);
 
 
 function findNextSq(sq){
