@@ -1,0 +1,54 @@
+<html>
+
+<head>
+     <link rel="stylesheet" href="animate.css">
+    <title>My first html</title>
+</head>
+
+<body>
+<div id="container">
+   <div id="animation">Anim goes here</div>
+</div>
+<button onclick="myMove()">click</button>
+
+<p id="p1">
+   The image of scout logo.
+   <img src="car.jpg" alt="Car" id="im">
+</p>
+
+
+<input type="button" value="Hide text"
+ onclick="document.getElementById('im').style.visibility='hidden'">
+<input type="button" value="Show text" 
+ onclick="document.getElementById('im').style.visibility='visible'">
+
+<div>
+   <h2>Finding HTML Elements Using document.forms</h2>
+
+<form id="frm1" >
+  First name: <input type="text" value="marc"><br>
+  Last name: <input type="text" value="mea"><br><br>
+  <input type="submit" value="Submit" onclick="myFunction()">
+</form>
+<script >
+   document.getElementById('im').src='scoutlogo.jpg';
+   document.getElementById('p1').style.background='green';
+   document.getElementById('p1').style.color='white';
+//animation function
+   function myMove() {
+  var elem = document.getElementById("animation");
+  var pos = 0;
+  var id = setInterval(frame, 2);
+  function frame() {
+    if (pos == 500) {
+      clearInterval(id);
+    } else {
+      pos++;
+      elem.style.top = pos + 'px';
+      elem.style.bottom = pos + 'px';
+    }
+   }
+}
+</script>
+</body>
+</html>
